@@ -409,6 +409,8 @@ class CIncludesGenerator < Generator
                     #define TARGET_RT_MAC_CFM 0
 
                     #ifdef RETRO68_CLANGD
+                        /* clangd parses declarations but does not understand
+                           Retro68 GCC's pascal/M68K_INLINE extensions. */
                         #ifndef pascal
                            #define pascal
                         #endif
