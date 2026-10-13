@@ -407,6 +407,16 @@ class CIncludesGenerator < Generator
                     #define TARGET_CPU_68K 1
                     #define TARGET_CPU_PPC 0
                     #define TARGET_RT_MAC_CFM 0
+
+                    #ifdef RETRO68_CLANGD
+                        #ifndef pascal
+                           #define pascal
+                        #endif
+                    #define M68K_INLINE(...)
+                    #else
+                        #define M68K_INLINE(...) = { __VA_ARGS__ }
+                    #endif
+
                     #define M68K_INLINE(...) = { __VA_ARGS__ }
                     #define GetCurrentArchitecture() ((int8_t)0)
                 #else
