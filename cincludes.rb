@@ -414,12 +414,11 @@ class CIncludesGenerator < Generator
                         #ifndef pascal
                            #define pascal
                         #endif
-                    #define M68K_INLINE(...)
+                        #define M68K_INLINE(...)
                     #else
                         #define M68K_INLINE(...) = { __VA_ARGS__ }
                     #endif
 
-                    #define M68K_INLINE(...) = { __VA_ARGS__ }
                     #define GetCurrentArchitecture() ((int8_t)0)
                 #else
                     #define TARGET_CPU_68K 0
